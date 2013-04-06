@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<!-- General UI -->
+
+	<string name="app_name">LifeLine</string>
+	<string name="info">Info</string>
+
+	<!-- Preferences -->
+
+	<string name="settings_category_general">Allgemein</string>
+	<string name="settings_active">Aktiv</string>
+	<string name="settings_active_on">Die LifeLine ist aktiv.</string>
+	<string name="settings_active_off">Aktiviert die LifeLine.</string>
+	<string name="settings_autostart">Automatischer Start</string>
+	<string name="settings_autostart_on">LifeLine wird mit dem System gestartet.</string>
+	<string name="settings_autostart_off">LifeLine wird nicht mit dem System gestartet.</string>
+
+	<string name="settings_display">Anzeige</string>
+	<string name="settings_color">Farbe</string>
+	<string name="settings_color_summary">Farbe, in der die LifeLine angezeigt wird.</string>
+
+	<!-- Debug Output -->
+
+	<string name="debug_started">LifeLine gestartet</string>
+	<string name="debug_stopped">LifeLine beendet</string>
+	<string name="debug_pref_changed">Einstellung geändert.</string>
+</resources>

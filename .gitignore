@@ -1,0 +1,15 @@
+# IntelliJ Idea files
+/.idea
+/LifeLine.iml
+
+# Generated folders and files
+/assets
+/bin
+/gen
+/libs
+/out
+/local.properties
+/project.properties
+
+# Stuff
+/proguard-project.txt
