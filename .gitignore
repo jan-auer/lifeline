@@ -10,6 +10,8 @@
 /out
 /local.properties
 /project.properties
+/LifeLine.apk
 
 # Stuff
 /proguard-project.txt
+/proguard_logs
