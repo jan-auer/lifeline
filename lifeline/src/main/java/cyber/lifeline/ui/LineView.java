@@ -26,6 +26,10 @@ public class LineView extends View {
 		paint = new Paint();
 	}
 
+
+
+
+
 	//
 	// Drawing and Properties   -----------------------------------------------
 	//

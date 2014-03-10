@@ -1,5 +1,6 @@
 package cyber.lifeline.ui;
 
+import android.app.ActionBar;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import cyber.lifeline.R;
@@ -21,6 +22,7 @@ public class LifeLinePreferences extends PreferenceFragment {
 		super.onCreate(savedInstanceState);
 
 		addPreferencesFromResource(R.xml.preferences);
-	}
+
+    }
 
 }

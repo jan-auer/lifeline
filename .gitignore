@@ -1,14 +1,4 @@
-# IntelliJ Idea files
-/.idea/workspace.xml
-
-# Generated folders and files
-/assets
-/bin
-/gen
-/libs
-/out
+.gradle
 /local.properties
-/LifeLine.apk
-
-# Stuff
-/proguard_logs
+/.idea/workspace.xml
+.DS_Store

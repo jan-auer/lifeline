@@ -13,9 +13,10 @@
 	</string-array>
 
 	<string-array name="color_names">
-		<item>Blau</item>
-		<item>Grün</item>
-		<item>Weiß</item>
+		<item>@string/blue</item>
+		<item>@string/green</item>
+		<item>@string/white</item>
 	</string-array>
+
 
 </resources>

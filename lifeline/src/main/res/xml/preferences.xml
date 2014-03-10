@@ -36,4 +36,20 @@
 				android:defaultValue="#33B5E5"/>
 
 	</PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="category_about"
+        android:title="@string/settings_about"
+       >
+        <Preference
+            android:title="@string/version"
+            android:summary="@string/version_name"
+            android:selectable="false"
+            />
+        <Preference
+            android:title="@string/authors"
+            android:summary="@string/author_name"
+            android:selectable="false"
+            />
+    </PreferenceCategory>
 </PreferenceScreen>

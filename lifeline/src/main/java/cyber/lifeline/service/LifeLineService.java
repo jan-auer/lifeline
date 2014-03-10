@@ -6,6 +6,9 @@ import android.os.BatteryManager;
 import android.os.Binder;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
+import android.util.Log;
+import android.widget.Toast;
+
 import cyber.lifeline.ui.LifeLinePreferences;
 import cyber.lifeline.ui.LineView;
 
@@ -13,7 +16,8 @@ import cyber.lifeline.ui.LineView;
  * The LifeLine service implementation.
  *
  * @author Jan Michael Auer <jan.auer@me.com>
- * @version 1.0
+ * @author Tobias Curth <tobiascurth@gmail.com>
+ * @version 1.1
  */
 public class LifeLineService extends FullscreenService
 		implements SharedPreferences.OnSharedPreferenceChangeListener {
@@ -40,9 +44,10 @@ public class LifeLineService extends FullscreenService
 		preferences.registerOnSharedPreferenceChangeListener(this);
 		registerReceiver(getReceiver(), new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
 		showView(lineView);
-	}
+    }
 
-	@Override
+
+    @Override
 	public void onDestroy() {
 		hideView(lineView);
 		unregisterReceiver(getReceiver());
@@ -50,7 +55,14 @@ public class LifeLineService extends FullscreenService
 		super.onDestroy();
 	}
 
-	//
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        return START_STICKY;
+    }
+
+
+
+    //
 	// Service Binder   -------------------------------------------------------
 	//
 
@@ -66,7 +78,12 @@ public class LifeLineService extends FullscreenService
 		return getBinder();
 	}
 
-	private IBinder getBinder() {
+    @Override
+    public boolean onUnbind(Intent intent) {
+        return super.onUnbind(intent);
+    }
+
+    private IBinder getBinder() {
 		if (serviceBinder == null) serviceBinder = new LifeLineBinder();
 		return serviceBinder;
 	}
@@ -84,7 +101,6 @@ public class LifeLineService extends FullscreenService
 			int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, 0);
 			lineView.setPercentage(level / (float) scale);
 		}
-
 	}
 
 	/**

@@ -15,7 +15,8 @@ import cyber.lifeline.service.LifeLineService;
  * Shows the settings screen and starts or stops the LifeLine service.
  *
  * @author Jan Michael Auer <jan.auer@me.com>
- * @version 1.0
+ * @author Tobias Curth <tobiascurth@gmail.com>
+ * @version 1.1
  */
 public class SettingsActivity extends Activity implements SharedPreferences.OnSharedPreferenceChangeListener {
 
@@ -50,7 +51,7 @@ public class SettingsActivity extends Activity implements SharedPreferences.OnSh
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.settings_menu, menu);
+		//getMenuInflater().inflate(R.menu.settings_menu, menu);
 		return true;
 	}
 

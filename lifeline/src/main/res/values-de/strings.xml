@@ -19,10 +19,17 @@
 	<string name="settings_display">Anzeige</string>
 	<string name="settings_color">Farbe</string>
 	<string name="settings_color_summary">Farbe, in der die LifeLine angezeigt wird.</string>
+    <string name="blue">Blau</string>
+    <string name="green">Grün</string>
+    <string name="white">Weiß</string>
 
 	<!-- Debug Output -->
 
 	<string name="debug_started">LifeLine gestartet</string>
 	<string name="debug_stopped">LifeLine beendet</string>
 	<string name="debug_pref_changed">Einstellung geändert.</string>
+
+    <string name="settings_about">Über</string>
+    <string name="version">Version</string>
+    <string name="authors">Autoren</string>
 </resources>
