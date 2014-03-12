@@ -1,8 +1,8 @@
 package cyber.lifeline.ui;
 
-import android.app.ActionBar;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
+
 import cyber.lifeline.R;
 
 /**
@@ -13,15 +13,15 @@ import cyber.lifeline.R;
  */
 public class LifeLinePreferences extends PreferenceFragment {
 
-	public static final String PREF_ACTIVE     = "active";
-	public static final String PREF_AUTO_START = "autostart";
-	public static final String PREF_COLOR      = "color";
+    public static final String PREF_ACTIVE = "active";
+    public static final String PREF_AUTO_START = "autostart";
+    public static final String PREF_COLOR = "color";
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-		addPreferencesFromResource(R.xml.preferences);
+        addPreferencesFromResource(R.xml.preferences);
 
     }
 

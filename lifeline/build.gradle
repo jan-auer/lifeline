@@ -1,14 +1,48 @@
+import java.util.regex.Pattern
+
 apply plugin: 'android'
+
+task('increaseVersionCode') << {
+    def manifestFile = file("src/main/AndroidManifest.xml")
+    def patternVersionCode = Pattern.compile("versionCode=\"(\\d+)\"")
+    def manifestText = manifestFile.getText()
+    def matcherVersionCode = patternVersionCode.matcher(manifestText)
+    matcherVersionCode.find()
+    def versionCode = Integer.parseInt(matcherVersionCode.group(1))
+    def manifestContent = matcherVersionCode.replaceAll("versionCode=\"" + ++versionCode + "\"")
+    manifestFile.write(manifestContent)
+}
+
+task('increaseVersionName') << {
+    def manifestFile = file("src/main/AndroidManifest.xml")
+    def patternVersionNumber = Pattern.compile("versionName=\"(\\d+).(\\d+).(\\d+)\"")
+    manifestText = manifestFile.getText()
+    def matcherVersionNumber = patternVersionNumber.matcher(manifestText)
+    matcherVersionNumber.find()
+    def versionNumberMajor = Integer.parseInt(matcherVersionNumber.group(1))
+    def versionNumberMinor = Integer.parseInt(matcherVersionNumber.group(2))
+    def versionNumberPatch = Integer.parseInt(matcherVersionNumber.group(3))
+    manifestContent = matcherVersionNumber.replaceAll("versionName=\"" + versionNumberMajor + "." + versionNumberMinor + "." + ++versionNumberPatch + "\"")
+    manifestFile.write(manifestContent)
+}
+
+tasks.whenTaskAdded { task ->
+    if (task.name == 'generateReleaseBuildConfig') {
+        task.dependsOn 'increaseVersionName'
+    }
+
+    if (task.name == 'generateDebugBuildConfig') {
+        task.dependsOn 'increaseVersionCode'
+    }
+}
 
 android {
     compileSdkVersion 17
-    buildToolsVersion "19.0.1"
+    buildToolsVersion "19.0.3"
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 19
-        versionCode 1
-        versionName "1.0"
+        targetSdkVersion 17
     }
     buildTypes {
         release {
