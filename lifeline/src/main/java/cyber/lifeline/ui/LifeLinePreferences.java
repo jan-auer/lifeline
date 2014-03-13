@@ -16,6 +16,8 @@ public class LifeLinePreferences extends PreferenceFragment {
     public static final String PREF_ACTIVE = "active";
     public static final String PREF_AUTO_START = "autostart";
     public static final String PREF_COLOR = "color";
+    public static final String PREF_ADVANCED_COLORS = "advanced_colors";
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

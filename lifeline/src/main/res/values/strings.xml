@@ -36,4 +36,7 @@
     <string name="version_name">1.1</string>
     <string name="version_code">1100</string>
     <string name="author_name">Jan Auer, Tobias Curth</string>
+    <string name="settings_advanced_colors">Advanced colors</string>
+    <string name="settings_advanced_colors_on">Additional colors based on battery status</string>
+    <string name="settings_advanced_colors_off">Only the predefined color will be used</string>
 </resources>

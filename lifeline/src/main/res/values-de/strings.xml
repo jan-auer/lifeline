@@ -32,4 +32,7 @@
     <string name="settings_about">Über</string>
     <string name="version">Version</string>
     <string name="authors">Autoren</string>
+    <string name="settings_advanced_colors">Erweiterte Farben</string>
+    <string name="settings_advanced_colors_on">Zusätzliche Farben abhängig vom Batteriestatus</string>
+    <string name="settings_advanced_colors_off">Es wird nur die definierte Farbe verwendet</string>
 </resources>

@@ -14,56 +14,86 @@ import android.view.View;
  */
 public class LineView extends View {
 
-	private Paint paint;
-	private float percentage;
+    private Paint paint;
+    private float percentage;
+    private boolean isCharging;
+    private boolean advancedColors;
+    private int color;
 
-	public LineView(Context context) {
-		super(context);
+    public LineView(Context context) {
+        super(context);
 
-		setBackgroundColor(Color.argb(0, 0, 0, 0));
-		setHapticFeedbackEnabled(false);
+        setBackgroundColor(Color.argb(0, 0, 0, 0));
+        setHapticFeedbackEnabled(false);
 
-		paint = new Paint();
-	}
-
-
+        paint = new Paint();
+    }
 
 
+    //
+    // Drawing and Properties   -----------------------------------------------
+    //
 
-	//
-	// Drawing and Properties   -----------------------------------------------
-	//
+    @Override
+    protected void onDraw(Canvas canvas) {
+        int width = canvas.getWidth();
 
-	@Override
-	protected void onDraw(Canvas canvas) {
-		int width = canvas.getWidth();
+        paint.setColor(color);
 
-		canvas.drawLine(0, 0, width * percentage, 0, paint);
-	}
+        if (advancedColors) {
+            if (isCharging)
+                paint.setColor(Color.parseColor("#669900"));
+            else {
+                if (percentage < .2)
+                    paint.setColor(Color.parseColor("#CC0000"));
+                else if (percentage < .35)
+                    paint.setColor(Color.parseColor("#669900"));
+            }
+        }
 
-	/**
-	 * Sets the width of the line as a percentage.
-	 *
-	 * @param percentage
-	 * 		A float from 0 to 1 specifying the width of the line.
-	 */
-	public void setPercentage(float percentage) {
-		if (percentage < 0) percentage = 0;
-		if (percentage > 1) percentage = 1;
-		this.percentage = percentage;
+        canvas.drawLine(0, 0, width * percentage, 0, paint);
+    }
 
-		invalidate();
-	}
 
-	/**
-	 * Sets the color of the line.
-	 *
-	 * @param color
-	 * 		The new color in hexadecimal representation.
-	 */
-	public void setColor(int color) {
-		paint.setColor(color);
-		invalidate();
-	}
+    /**
+     * Sets the width of the line as a percentage.
+     *
+     * @param percentage A float from 0 to 1 specifying the width of the line.
+     */
+    public void setPercentage(float percentage) {
+        if (percentage < 0) percentage = 0;
+        if (percentage > 1) percentage = 1;
+        this.percentage = percentage;
+
+        invalidate();
+    }
+
+    /**
+     * Sets the current battery status.
+     * @param isCharging The new status.
+     */
+    public void setCharging(boolean isCharging) {
+        this.isCharging = isCharging;
+        invalidate();
+    }
+
+    /**
+     * Sets the preference option of advancedColors.
+     * @param advancedColors The preference option.
+     */
+    public void setAdvancedColors(boolean advancedColors) {
+        this.advancedColors = advancedColors;
+        invalidate();
+    }
+
+    /**
+     * Sets the color of the line.
+     *
+     * @param color The new color in hexadecimal representation.
+     */
+    public void setColor(int color) {
+        this.color = color;
+        invalidate();
+    }
 
 }

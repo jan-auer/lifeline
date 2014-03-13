@@ -35,6 +35,14 @@
 				android:entryValues="@array/color_values"
 				android:defaultValue="#33B5E5"/>
 
+        <CheckBoxPreference
+            android:key="advanced_colors"
+            android:title="@string/settings_advanced_colors"
+            android:summaryOn="@string/settings_advanced_colors_on"
+            android:summaryOff="@string/settings_advanced_colors_off"
+            android:defaultValue="false"
+            android:dependency="active"/>
+
 	</PreferenceCategory>
 
     <PreferenceCategory
