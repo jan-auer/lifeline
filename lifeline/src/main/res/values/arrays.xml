@@ -1,22 +1,26 @@
 <resources>
 
-	<string-array name="settings_height">
-		<item>1</item>
-		<item>2</item>
-		<item>3</item>
-	</string-array>
+    <string-array name="settings_height">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
 
-	<string-array name="color_values">
-		<item>#33B5E5</item>
-		<item>#A4C739</item>
-		<item>#FFFFFF</item>
-	</string-array>
+    <string-array name="color_values">
+        <item>#FFFFFF</item>
+        <item>#0099cc</item>
+        <item>#669900</item>
+        <item>#CC0000</item>
+        <item>#FF8800</item>
+        <item>#9933CC</item>
+    </string-array>
 
-	<string-array name="color_names">
-		<item>@string/blue</item>
-		<item>@string/green</item>
-		<item>@string/white</item>
-	</string-array>
-
-
+    <string-array name="color_names">
+        <item>@string/white</item>
+        <item>@string/blue</item>
+        <item>@string/green</item>
+        <item>@string/red</item>
+        <item>@string/yellow</item>
+        <item>@string/purple</item>
+    </string-array>
 </resources>

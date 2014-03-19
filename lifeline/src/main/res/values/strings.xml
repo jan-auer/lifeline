@@ -19,9 +19,13 @@
 	<string name="settings_display">Display</string>
 	<string name="settings_color">Color</string>
 	<string name="settings_color_summary">Color of the LifeLine.</string>
+
     <string name="blue">Blue</string>
     <string name="green">Green</string>
     <string name="white">White</string>
+    <string name="yellow">Yellow</string>
+    <string name="red">Red</string>
+    <string name="purple">Purple</string>
 
 	<!-- Debug Output -->
 

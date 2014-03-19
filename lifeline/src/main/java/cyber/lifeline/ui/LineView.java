@@ -6,6 +6,8 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.view.View;
 
+import cyber.lifeline.R;
+
 /**
  * Draws a line with the specified properties at the very top of the view.
  *
@@ -42,12 +44,12 @@ public class LineView extends View {
 
         if (advancedColors) {
             if (isCharging)
-                paint.setColor(Color.parseColor("#669900"));
+                paint.setColor(getResources().getColor(R.color.color_blue));
             else {
                 if (percentage < .2)
-                    paint.setColor(Color.parseColor("#CC0000"));
+                    paint.setColor(getResources().getColor(R.color.color_red));
                 else if (percentage < .35)
-                    paint.setColor(Color.parseColor("#669900"));
+                    paint.setColor(getResources().getColor(R.color.color_yellow));
             }
         }
 
