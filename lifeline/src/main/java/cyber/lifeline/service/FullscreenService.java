@@ -62,16 +62,16 @@ public abstract class FullscreenService extends Service {
      */
     protected LayoutParams getLayoutParams() {
         if (layoutParams == null) {
-            layoutParams = new WindowManager.LayoutParams(
-                    WindowManager.LayoutParams.WRAP_CONTENT,
-                    WindowManager.LayoutParams.WRAP_CONTENT,
-                    WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY,
-                    WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
-                            | WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
+            layoutParams = new LayoutParams(
+                    LayoutParams.MATCH_PARENT,
+                    LayoutParams.WRAP_CONTENT,
+                    LayoutParams.TYPE_SYSTEM_OVERLAY,
+                    LayoutParams.FLAG_NOT_FOCUSABLE
+                            | LayoutParams.FLAG_LAYOUT_IN_SCREEN,
                     PixelFormat.TRANSLUCENT
             );
 
-            layoutParams.gravity = Gravity.TOP | Gravity.CENTER;
+            layoutParams.gravity = Gravity.TOP | Gravity.LEFT;
             layoutParams.height = 1;
         }
 
