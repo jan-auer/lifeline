@@ -33,7 +33,7 @@
 				android:summary="@string/settings_color_summary"
 				android:entries="@array/color_names"
 				android:entryValues="@array/color_values"
-				android:defaultValue="@color/color_white"/>
+				android:defaultValue="#FFFFFF"/>
 
         <CheckBoxPreference
             android:key="advanced_colors"

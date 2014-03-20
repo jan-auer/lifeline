@@ -42,7 +42,7 @@ public class LifeLineService extends FullscreenService
         lineView = new LineView(this);
 
         loadPreferences();
-        loadPreferences();
+       // loadPreferences();
 
         preferences.registerOnSharedPreferenceChangeListener(this);
         registerReceiver(getReceiver(), new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
